@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Snack Content — Estrutura de Capital MBO</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 30px;
+    line-height: 1.5;
+    background: #fafafa;
+  }
+  h1 {
+    font-size: 26px;
+    margin: 0 0 4px 0;
+    color: #0a0a0a;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #1a1a1a;
+  }
+  h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 40px 0 14px 0;
+    color: #0a0a0a;
+    padding: 10px 16px;
+    border-radius: 4px;
+  }
+  h2.equity { background: #1e40af; color: white; }
+  h2.divida { background: #166534; color: white; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 10px 0 20px 0;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  th {
+    background: #1a1a1a;
+    color: white;
+    padding: 11px 9px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  table.equity th { background: #1e40af; }
+  table.divida th { background: #166534; }
+  td {
+    padding: 10px 9px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.metric { font-weight: 600; color: #333; background: #f7f7f7; }
+  td.good { color: #0a7f3f; font-weight: 600; }
+  td.bad { color: #c41e3a; font-weight: 600; }
+  td.warn { color: #d97706; font-weight: 600; }
+  td.highlight { background: #fef9c3; font-weight: 600; }
+  .legend {
+    background: #f3f4f6;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin: 18px 0;
+    font-size: 12px;
+  }
+  .legend strong { display: block; margin-bottom: 6px; font-size: 13px; color: #333; }
+  p { font-size: 13px; margin: 8px 0; }
+  ul { font-size: 13px; padding-left: 22px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 11px;
+    color: #888;
+  }
+  .insight {
+    background: #fef9c3;
+    padding: 16px 20px;
+    border-left: 4px solid #d97706;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .ops-snapshot {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    margin: 15px 0;
+  }
+  .ops-snapshot table {
+    box-shadow: none;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Snack Content — MBO Biosphera</h1>
+<div class="subtitle">Estrutura de Capital · 4 cenários · Material para M&A Advisory</div>
+
+<h2 style="background:#666; color:white;">Contexto Operacional</h2>
+
+<div class="ops-snapshot">
+<table>
+  <tr>
+    <th style="width:30%">Métrica</th>
+    <th style="width:23%">2026 (ano completo)</th>
+    <th style="width:23%">2027 (Ano 1 pós-MBO)</th>
+    <th style="width:24%">2028 (Ano 2 pós-MBO)</th>
+  </tr>
+  <tr>
+    <td class="metric">Faturamento Bruto</td>
+    <td>R$ 35,5M</td>
+    <td>R$ 40,8M (+15%)</td>
+    <td>R$ 49M (+20%)</td>
+  </tr>
+  <tr>
+    <td class="metric">Receita Líquida</td>
+    <td>R$ 26M</td>
+    <td>R$ 29,9M</td>
+    <td>R$ 35,9M</td>
+  </tr>
+  <tr>
+    <td class="metric">EBITDA Operacional</td>
+    <td>R$ 4M (transição MBO)</td>
+    <td>R$ 6,5M (21,7%)</td>
+    <td>R$ 8,6M (24%)</td>
+  </tr>
+  <tr>
+    <td class="metric">Carteira</td>
+    <td colspan="3">Guaraná Antarctica, P&G (Pampers/Gillette/Old Spice), L'Oréal, Whirlpool, Sony, Britânia, Airbnb</td>
+  </tr>
+</table>
+</div>
+
+<p style="font-size:11px; color:#888; margin-top:-12px; font-style:italic;">
+2026 é ano de transição (MBO Biosphera em jul/26): primeiro semestre opera com estrutura Biosphera (CSC drenando), segundo semestre opera limpo. EBITDA forward 2027 reflete operação plena pós-MBO.
+</p>
+
+<div class="legend">
+<strong>Movimento societário:</strong> MBO do fundo Biosphera (57% Snack Brasil desde 2019). Downpayment R$4M + quitação CSC/FIDC R$2M = R$6M de cash necessário em jul/26. Cap table pós-MBO sem aporte externo: Nelson 50% / Vitor 50%.<br><br>
+<strong>4 cenários modelados:</strong> Capital base R$8M em todos. C2 e C4 adicionam R$10M de BNDES via Snack Brasil (CNAE de produtora ativo, projetos audiovisuais em desenvolvimento).<br><br>
+<strong>Premissa valuation:</strong> Múltiplo aplicado 5,5x EBITDA forward 2027 (referência: agências creator economy + tech proprietária).
+</div>
+
+<!-- QUADRO 1: EQUITY -->
+<h2 class="equity">Caminho 1 · Equity (com diluição)</h2>
+
+<table class="equity">
+  <tr>
+    <th style="width:30%">Métrica</th>
+    <th style="width:35%">C1 · R$ 8M Equity</th>
+    <th style="width:35%">C2 · R$ 8M Equity + R$ 10M BNDES</th>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dbeafe; font-weight:600; padding:8px 12px; color:#1e40af; font-size:11px; text-transform:uppercase; letter-spacing:1px;">ESTRUTURA DE CAPITAL</td></tr>
+  <tr>
+    <td class="metric">Capital total</td>
+    <td class="highlight">R$ 8.000.000</td>
+    <td class="highlight">R$ 18.000.000</td>
+  </tr>
+  <tr>
+    <td class="metric">Diluição</td>
+    <td class="warn">18%</td>
+    <td class="warn">18%</td>
+  </tr>
+  <tr>
+    <td class="metric">Timing até cash</td>
+    <td class="warn">4-9 meses (Equity)</td>
+    <td class="warn">4-9m (Equity) + 3m (BNDES)</td>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dbeafe; font-weight:600; padding:8px 12px; color:#1e40af; font-size:11px; text-transform:uppercase; letter-spacing:1px;">VALUATION</td></tr>
+  <tr>
+    <td class="metric">Pre-money</td>
+    <td>R$ 35.500.000</td>
+    <td>R$ 35.500.000</td>
+  </tr>
+  <tr>
+    <td class="metric">Post-money</td>
+    <td>R$ 43.500.000</td>
+    <td>R$ 43.500.000</td>
+  </tr>
+  <tr>
+    <td class="metric">Múltiplo aplicado<br><span style="font-weight:400; color:#888; font-size:11px;">(sobre EBITDA 2027 R$6,5M)</span></td>
+    <td>5,5x forward</td>
+    <td>5,5x forward</td>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dbeafe; font-weight:600; padding:8px 12px; color:#1e40af; font-size:11px; text-transform:uppercase; letter-spacing:1px;">CAP TABLE PÓS-DEAL</td></tr>
+  <tr>
+    <td class="metric">Nelson + Vitor (founders)</td>
+    <td>82% (41% cada)</td>
+    <td>82% (41% cada)</td>
+  </tr>
+  <tr>
+    <td class="metric">Investidor novo</td>
+    <td>18%</td>
+    <td>18%</td>
+  </tr>
+  <tr>
+    <td class="metric">Biosphera</td>
+    <td class="good">0% (saiu)</td>
+    <td class="good">0% (saiu)</td>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dbeafe; font-weight:600; padding:8px 12px; color:#1e40af; font-size:11px; text-transform:uppercase; letter-spacing:1px;">SAÚDE FINANCEIRA</td></tr>
+  <tr>
+    <td class="metric">Caixa inicial pós-MBO</td>
+    <td class="good">R$ 2,5M</td>
+    <td class="good">R$ 2,5M (+ R$10M BNDES em out/26)</td>
+  </tr>
+  <tr>
+    <td class="metric">Caixa dez/26</td>
+    <td class="good">R$ 3,4M</td>
+    <td class="good">R$ 14,9M</td>
+  </tr>
+  <tr>
+    <td class="metric">Caixa dez/28</td>
+    <td class="good">R$ 9,1M</td>
+    <td class="good">R$ 22,2M</td>
+  </tr>
+  <tr>
+    <td class="metric">Dívida pós-deal</td>
+    <td class="good">Zero</td>
+    <td>R$ 10M BNDES (TR+2%)</td>
+  </tr>
+  <tr>
+    <td class="metric">Juros mensais (dívida nova)</td>
+    <td class="good">Zero</td>
+    <td class="good">R$ 17k (só BNDES)</td>
+  </tr>
+  <tr>
+    <td class="metric">Net debt / EBITDA 2027</td>
+    <td class="good">-1,4x (caixa líquido)</td>
+    <td>-0,8x (caixa líquido após BNDES)</td>
+  </tr>
+</table>
+
+<div class="insight">
+<strong>Posição no bloco Equity:</strong>
+<ul>
+  <li><strong>C1</strong> é a estrutura mais limpa: balanço zerado, sem juros, sem amortização. 18% de diluição é o custo. Adequado quando velocidade não é crítica e qualidade do investidor é prioridade.</li>
+  <li><strong>C2</strong> adiciona R$10M de capital via BNDES (Snack Brasil, CNAE de produtora). Mesma diluição (BNDES não dilui), mas R$22M de caixa em dez/28 — capital disponível pra investir em Snack Tech, Snack Originals, ou aquisições. Carga de juros marginal (R$17k/mês).</li>
+</ul>
+</div>
+
+<!-- QUADRO 2: DÍVIDA -->
+<h2 class="divida">Caminho 2 · Dívida (sem diluição)</h2>
+
+<table class="divida">
+  <tr>
+    <th style="width:30%">Métrica</th>
+    <th style="width:35%">C3 · R$ 8M F&F</th>
+    <th style="width:35%">C4 · R$ 8M F&F + R$ 10M BNDES</th>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dcfce7; font-weight:600; padding:8px 12px; color:#166534; font-size:11px; text-transform:uppercase; letter-spacing:1px;">ESTRUTURA DE CAPITAL</td></tr>
+  <tr>
+    <td class="metric">Capital total</td>
+    <td class="highlight">R$ 8.000.000</td>
+    <td class="highlight">R$ 18.000.000</td>
+  </tr>
+  <tr>
+    <td class="metric">Diluição</td>
+    <td class="good">0%</td>
+    <td class="good">0%</td>
+  </tr>
+  <tr>
+    <td class="metric">Timing até cash</td>
+    <td class="good">2-4 meses (F&F)</td>
+    <td class="good">2-4m (F&F) + 3m (BNDES)</td>
+  </tr>
+  <tr>
+    <td class="metric">Taxa F&F</td>
+    <td>CDI (14,5% a.a.)</td>
+    <td>CDI (14,5% a.a.)</td>
+  </tr>
+  <tr>
+    <td class="metric">Taxa BNDES</td>
+    <td>-</td>
+    <td>TR+2% (~2% a.a.)</td>
+  </tr>
+  <tr>
+    <td class="metric">Amortização F&F</td>
+    <td>4× R$2M (jul/28, nov/28, mar/29, jul/29)</td>
+    <td>Mesma estrutura</td>
+  </tr>
+  <tr>
+    <td class="metric">Amortização BNDES</td>
+    <td>-</td>
+    <td>R$140k/mês após out/28 (carência 2 anos)</td>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dcfce7; font-weight:600; padding:8px 12px; color:#166534; font-size:11px; text-transform:uppercase; letter-spacing:1px;">VALUATION REFERENCIAL</td></tr>
+  <tr>
+    <td class="metric">Snack pós-MBO<br><span style="font-weight:400; color:#888; font-size:11px;">(múltiplo 6x EBITDA 2027)</span></td>
+    <td>R$ 40M</td>
+    <td>R$ 40M</td>
+  </tr>
+  <tr>
+    <td class="metric">Enterprise Value (EV)<br><span style="font-weight:400; color:#888; font-size:11px;">(equity + dívida líquida)</span></td>
+    <td>R$ 45,2M</td>
+    <td>R$ 54,7M</td>
+  </tr>
+  <tr>
+    <td class="metric">EV / EBITDA 2027</td>
+    <td>7,0x</td>
+    <td>8,4x</td>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dcfce7; font-weight:600; padding:8px 12px; color:#166534; font-size:11px; text-transform:uppercase; letter-spacing:1px;">CAP TABLE PÓS-DEAL</td></tr>
+  <tr>
+    <td class="metric">Nelson + Vitor (founders)</td>
+    <td class="good">100% (50% cada)</td>
+    <td class="good">100% (50% cada)</td>
+  </tr>
+  <tr>
+    <td class="metric">Biosphera</td>
+    <td class="good">0% (saiu)</td>
+    <td class="good">0% (saiu)</td>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dcfce7; font-weight:600; padding:8px 12px; color:#166534; font-size:11px; text-transform:uppercase; letter-spacing:1px;">CAPACIDADE DE PAGAMENTO DA DÍVIDA</td></tr>
+  <tr>
+    <td class="metric">Juros mensais (dívida nova)</td>
+    <td class="warn">R$ 97k</td>
+    <td class="warn">R$ 114k (97 F&F + 17 BNDES)</td>
+  </tr>
+  <tr>
+    <td class="metric">Juros anuais</td>
+    <td>R$ 1,16M</td>
+    <td>R$ 1,37M</td>
+  </tr>
+  <tr>
+    <td class="metric">Cobertura juros<br><span style="font-weight:400; color:#888; font-size:11px;">(EBITDA 2027 / juros anuais)</span></td>
+    <td class="good">5,6x</td>
+    <td class="warn">4,7x</td>
+  </tr>
+  <tr>
+    <td class="metric">Net debt total pós-deal</td>
+    <td>R$ 9,2M</td>
+    <td>R$ 18,7M</td>
+  </tr>
+  <tr>
+    <td class="metric">Net debt / EBITDA 2027</td>
+    <td>1,4x</td>
+    <td class="warn">2,9x</td>
+  </tr>
+  <tr>
+    <td class="metric">Net debt / EBITDA 2028</td>
+    <td class="good">1,1x</td>
+    <td>2,2x</td>
+  </tr>
+
+  <tr><td colspan="3" style="background:#dcfce7; font-weight:600; padding:8px 12px; color:#166534; font-size:11px; text-transform:uppercase; letter-spacing:1px;">SAÚDE FINANCEIRA</td></tr>
+  <tr>
+    <td class="metric">Caixa inicial pós-MBO</td>
+    <td class="good">R$ 2M (sobra do F&F)</td>
+    <td class="good">R$ 2M (+ R$10M BNDES em out/26)</td>
+  </tr>
+  <tr>
+    <td class="metric">Caixa dez/26</td>
+    <td class="good">R$ 4,3M</td>
+    <td class="good">R$ 14,3M</td>
+  </tr>
+  <tr>
+    <td class="metric">Caixa dez/28</td>
+    <td class="good">R$ 6,15M</td>
+    <td class="good">R$ 15,28M</td>
+  </tr>
+  <tr>
+    <td class="metric">FCF/ano gerado<br><span style="font-weight:400; color:#888; font-size:11px;">(2027 base)</span></td>
+    <td>R$ 2,2M</td>
+    <td>R$ 2M</td>
+  </tr>
+</table>
+
+<div class="insight">
+<strong>Posição no bloco Dívida:</strong>
+<ul>
+  <li><strong>C3</strong> tem cobertura de juros confortável (5,6x) e Net debt/EBITDA 1,4x. R$2M extras de F&F (vs MBO R$6M) criam reserva inicial saudável. Amortização concentrada em 4 parcelas trimestrais (jul/28 a jul/29) permite caixa respirar entre pagamentos.</li>
+  <li><strong>C4</strong> oferece R$18M de capital com cobertura 4,7x e alavancagem 2,9x EBITDA — limite alto para due diligence subsequente, mas viabilizado pela operação audiovisual da Snack Brasil (CNAE de produtora ativo, projetos em desenvolvimento).</li>
+</ul>
+</div>
+
+<!-- SÍNTESE -->
+<h2 style="background:#1a1a1a; color:white;">Síntese · Métricas Comparativas para Due Diligence</h2>
+
+<table>
+  <tr>
+    <th>Métrica</th>
+    <th>C1 Equity</th>
+    <th>C2 Equity + BNDES</th>
+    <th>C3 F&F</th>
+    <th>C4 F&F + BNDES</th>
+  </tr>
+  <tr>
+    <td class="metric">Capital total</td>
+    <td>R$ 8M</td>
+    <td>R$ 18M</td>
+    <td>R$ 8M</td>
+    <td>R$ 18M</td>
+  </tr>
+  <tr>
+    <td class="metric">Diluição founders</td>
+    <td class="warn">18%</td>
+    <td class="warn">18%</td>
+    <td class="good">0%</td>
+    <td class="good">0%</td>
+  </tr>
+  <tr>
+    <td class="metric">Net debt / EBITDA 2027</td>
+    <td class="good">-1,4x</td>
+    <td class="good">-0,8x</td>
+    <td>1,4x</td>
+    <td class="warn">2,9x</td>
+  </tr>
+  <tr>
+    <td class="metric">Juros mensais</td>
+    <td class="good">Zero</td>
+    <td class="good">R$ 17k</td>
+    <td class="warn">R$ 97k</td>
+    <td class="warn">R$ 114k</td>
+  </tr>
+  <tr>
+    <td class="metric">Caixa inicial pós-MBO</td>
+    <td class="good">R$ 2,5M</td>
+    <td class="good">R$ 2,5M</td>
+    <td class="good">R$ 2M</td>
+    <td class="good">R$ 2M</td>
+  </tr>
+  <tr>
+    <td class="metric">Caixa dez/28</td>
+    <td class="good">R$ 9,1M</td>
+    <td class="good">R$ 22,2M</td>
+    <td class="good">R$ 6,15M</td>
+    <td class="good">R$ 15,28M</td>
+  </tr>
+  <tr>
+    <td class="metric">Apetite p/ captação futura</td>
+    <td class="good">Total</td>
+    <td class="good">Alto</td>
+    <td>Médio</td>
+    <td class="warn">Limitado</td>
+  </tr>
+</table>
+
+<div class="insight">
+<strong>Trade-off central — matriz 2×2:</strong>
+<ul>
+  <li><strong>C1 (Equity puro):</strong> mais conservador. 18% diluição em troca de balanço limpo e zero risco financeiro.</li>
+  <li><strong>C2 (Equity + BNDES):</strong> 18% diluição + R$10M de capital extra a custo baixo (TR+2%). Ambicioso, prepara crescimento agressivo.</li>
+  <li><strong>C3 (F&F puro):</strong> mesmo capital de C1, zero diluição, mas R$97k/mês de juros. Stress relacional moderado (4 prestamistas).</li>
+  <li><strong>C4 (F&F + BNDES):</strong> R$18M sem diluir, mas alavancagem 2,9x EBITDA pode limitar captação futura.</li>
+</ul>
+</div>
+
+<h2 style="background:#666; color:white;">Pré-requisitos por Cenário</h2>
+<table>
+  <tr>
+    <th style="width:18%">Cenário</th>
+    <th style="width:82%">O que precisa ser verdade para viabilidade</th>
+  </tr>
+  <tr>
+    <td class="metric">C1</td>
+    <td>Banker estruturando processo + janela 4-9 meses + apetite VC para creator economy + tese de tech proprietária validada</td>
+  </tr>
+  <tr>
+    <td class="metric">C2</td>
+    <td>Tudo do C1 + aprovação BNDES R$10M (Snack Brasil) + projeto audiovisual enquadrado Ancine</td>
+  </tr>
+  <tr>
+    <td class="metric">C3</td>
+    <td>Term sheet F&F assinado (4 prestamistas × R$2M) + venda CMS R$2,5M com comprador identificado e timing confirmado</td>
+  </tr>
+  <tr>
+    <td class="metric">C4</td>
+    <td>Tudo do C3 + aprovação BNDES R$10M por escrito + projeto audiovisual enquadrado Ancine via Snack Brasil</td>
+  </tr>
+</table>
+
+<h2 style="background:#666; color:white;">Considerações para M&A Advisory</h2>
+
+<p><strong>Sobre Biosphera (saída):</strong> Royalty estruturado em 5% sobre receita líquida (negociado vs proposta original sobre receita bruta), piso R$1,5M/ano corrigido CDI, prazo 5 anos. Variável: 20% sobre upside até R$50M de valuation, 15% acima. Status: não-vinculante.</p>
+
+<p><strong>Sobre os ativos de tecnologia:</strong> Snack opera 2 produtos SaaS proprietários — ShopFlow (creator commerce, piloto L'Oréal) e TREMOR (brand intelligence vídeo-first, produção Guaraná Copa). Esses ativos são candidatos a spin-off em 18-36 meses caso receita isolada atinja R$5M+ ARR. Estrutura societária sugerida: Botega Holding controlando Snack Brasil + Snack Tech (SPE para ShopFlow + TREMOR) + Snack Originals (produtora audiovisual).</p>
+
+<p><strong>Sobre o pace comercial:</strong> R$2,3M/mês de novo negócio fechado em 2026. Backlog cobre 86% do faturamento projetado. RFIs ativos com Vale (R$96M em 4 anos) e Porto (creator economy enterprise) — não modelados no BP (upside não capturado).</p>
+
+<div class="footer">
+Documento gerado a partir do BP 30 meses Snack Content · 4 cenários (capital base R$8M; C2 e C4 adicionam BNDES R$10M) · Premissas operacionais idênticas em todos · Valuation baseada em múltiplo 5,5x EBITDA forward 2027 · maio 2026
+</div>
+
+</body>
+</html>
