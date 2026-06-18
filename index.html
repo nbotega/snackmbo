@@ -3,566 +3,752 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>Snack Content · Pitch</title>
+<title>Snack Group · Investment One-Pager</title>
 <style>
   :root {
     --navy: #0A1628;
-    --navy-2: #0E1D33;
     --navy-soft: #1E2761;
-    --ice: #C9D6EF;
-    --ice-dim: #8294B5;
+    --paper: #FAF8F4;
+    --paper-2: #F1EDE4;
     --orange: #FF6B35;
-    --orange-soft: #FF8B5E;
+    --ink: #1A1A1A;
+    --gray: #6B7280;
+    --gray-line: #D8D2C5;
     --white: #FFFFFF;
-    --line: rgba(255,255,255,0.10);
-    --line-strong: rgba(255,255,255,0.18);
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    background: var(--navy);
-    color: var(--white);
+    background: var(--paper);
+    color: var(--ink);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
+
   .serif { font-family: Georgia, "Times New Roman", serif; }
 
-  /* ===== NAV ===== */
-  .nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 18px 40px;
-    background: rgba(10,22,40,0.82);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-brand { display: flex; align-items: center; gap: 11px; }
-  .nav-mark {
-    width: 28px; height: 28px; background: var(--orange); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--white); font-size: 12px;
-  }
-  .nav-name { font-size: 14px; font-weight: 700; letter-spacing: 0.18em; }
-  .nav-cta {
-    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--navy); background: var(--orange); font-weight: 700;
-    padding: 9px 18px; border-radius: 3px; text-decoration: none;
-    transition: transform 0.2s;
-  }
-  .nav-cta:hover { transform: translateY(-1px); }
-
-  /* ===== SECTION SHELL ===== */
-  section {
-    position: relative;
-    padding: 110px 40px;
-    max-width: 1180px;
+  .sheet {
+    max-width: 1100px;
     margin: 0 auto;
+    background: var(--paper);
+    padding: 56px 64px 48px;
   }
-  .eyebrow {
-    font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
-    color: var(--orange); font-weight: 700; margin-bottom: 22px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .eyebrow::before {
-    content: ""; width: 28px; height: 2px; background: var(--orange);
-  }
-  h2.section-title {
-    font-size: clamp(30px, 4.5vw, 48px); line-height: 1.08; font-weight: 700;
-    letter-spacing: -0.015em; margin-bottom: 26px;
-  }
-  .lede { font-size: clamp(15px, 1.6vw, 18px); color: var(--ice); max-width: 760px; line-height: 1.6; }
-  .lede strong { color: var(--white); }
 
-  /* reveal animation */
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.in { opacity: 1; transform: none; }
+  /* ===== HEADER ===== */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-size: 13px;
+  }
+  .brand-name {
+    font-size: 18px; font-weight: 700; letter-spacing: 0.14em;
+    color: var(--navy);
+  }
+  .confidential {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--orange); font-weight: 700;
+  }
+  .doc-meta {
+    display: flex; justify-content: space-between;
+    font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray); padding-top: 8px; margin-bottom: 40px;
+  }
 
   /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-    padding-top: 90px; max-width: 1180px; margin: 0 auto;
-    padding-left: 40px; padding-right: 40px;
+  .hero { margin-bottom: 40px; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--orange); font-weight: 700; margin-bottom: 16px;
   }
   .hero h1 {
-    font-size: clamp(44px, 8vw, 92px); line-height: 1.02; font-weight: 700;
-    letter-spacing: -0.02em; margin-bottom: 28px;
+    font-size: 38px; line-height: 1.12; font-weight: 700;
+    color: var(--navy); letter-spacing: -0.01em; margin-bottom: 18px;
   }
-  .hero h1 .accent { color: var(--orange); }
-  .hero-sub { font-size: clamp(16px, 2vw, 21px); color: var(--ice); max-width: 680px; font-style: italic; margin-bottom: 56px; }
-  .hero-stats { display: flex; flex-wrap: wrap; gap: 48px; }
-  .hero-stat .hs-num { font-size: clamp(24px, 3vw, 34px); font-weight: 700; color: var(--orange); }
-  .hero-stat .hs-lbl { font-size: 13px; color: var(--ice-dim); margin-top: 4px; letter-spacing: 0.02em; }
-  .scroll-hint {
-    position: absolute; bottom: 38px; left: 40px;
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ice-dim);
-    display: flex; align-items: center; gap: 10px;
+  .hero .lede {
+    font-size: 16px; line-height: 1.55; color: var(--ink); max-width: 800px;
   }
-  .scroll-hint .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); animation: pulse 1.8s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .hero .lede strong { color: var(--navy); }
+  .hero .tagline {
+    margin-top: 16px; font-size: 13px; font-style: italic;
+    color: var(--navy); font-weight: 600;
+  }
 
-  /* alt background bands */
-  .band { background: var(--navy-2); }
-  .band-wrap { background: var(--navy-2); }
+  /* ===== STAT STRIP ===== */
+  .stat-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--gray-line);
+    border-bottom: 1px solid var(--gray-line);
+    margin: 36px 0 40px;
+  }
+  .stat { padding: 20px 24px 20px 0; border-right: 1px solid var(--gray-line); }
+  .stat:last-child { border-right: none; padding-right: 0; }
+  .stat .num {
+    font-size: 28px; font-weight: 700; color: var(--navy);
+    letter-spacing: -0.01em; line-height: 1;
+  }
+  .stat .lbl { font-size: 11px; color: var(--gray); margin-top: 8px; letter-spacing: 0.02em; }
 
-  /* ===== BRANDS ===== */
-  .brands-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  /* ===== SECTION ===== */
+  .section { margin-bottom: 44px; }
+  .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
+  .section-num { font-size: 12px; font-weight: 700; color: var(--orange); letter-spacing: 0.05em; }
+  .section-title { font-size: 21px; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+  .section-rule { flex: 1; height: 1px; background: var(--gray-line); align-self: center; }
+  .section-intro { font-size: 13px; color: var(--gray); margin-bottom: 20px; max-width: 880px; }
+
+  /* ===== MARCAS ===== */
+  .brands { margin: 0 0 44px; }
+  .brands-label {
+    font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray); font-weight: 700; margin-bottom: 14px;
+  }
+  .brands-grid { display: flex; flex-wrap: wrap; gap: 8px; }
   .brand-chip {
-    font-size: 14px; font-weight: 600; color: var(--ice);
-    border: 1px solid var(--line-strong); padding: 9px 16px; border-radius: 3px;
-    transition: border-color 0.2s, color 0.2s;
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    background: var(--white); border: 1px solid var(--gray-line);
+    padding: 7px 14px; border-radius: 2px;
   }
-  .brand-chip:hover { border-color: var(--orange); color: var(--white); }
-  .brands-cases { margin-top: 24px; font-size: 13px; color: var(--ice-dim); max-width: 880px; line-height: 1.6; }
+  .brands-foot { margin-top: 14px; font-size: 11.5px; line-height: 1.55; color: var(--gray); max-width: 900px; }
 
-  /* ===== TESE (big statement) ===== */
-  .statement { font-size: clamp(28px, 4vw, 52px); line-height: 1.12; font-weight: 700; letter-spacing: -0.01em; }
-  .statement .dim { color: var(--ice-dim); }
-  .statement .accent { color: var(--orange); }
-
-  /* ===== VERTICALS ===== */
-  .verticals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px; }
-  .vcard {
-    border: 1px solid var(--line-strong); border-radius: 6px; padding: 30px 26px;
-    background: rgba(255,255,255,0.02); transition: transform 0.25s, border-color 0.25s, background 0.25s;
+  /* ===== DIAGRAMA ===== */
+  .diagram { padding: 8px 0 4px; }
+  .dg-holding {
+    max-width: 420px; margin: 0 auto 0;
+    background: var(--navy); color: var(--white);
+    text-align: center; padding: 16px 20px; border-radius: 3px;
   }
-  .vcard:hover { transform: translateY(-5px); border-color: var(--orange); background: rgba(255,107,53,0.05); }
-  .vcard.featured { background: var(--orange); border-color: var(--orange); }
-  .vcard .v-tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--orange); margin-bottom: 12px; }
-  .vcard.featured .v-tag { color: var(--navy); }
-  .vcard .v-name { font-size: 30px; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.01em; }
-  .vcard.featured .v-name { color: var(--navy); }
-  .vcard .v-desc { font-size: 14px; color: var(--ice); line-height: 1.6; }
-  .vcard.featured .v-desc { color: var(--navy); }
-  .vcard .v-metric { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; font-weight: 600; color: var(--orange-soft); }
-  .vcard.featured .v-metric { border-top-color: rgba(10,22,40,0.2); color: var(--navy); }
-
-  /* social commerce band */
-  .sc-line {
-    margin-top: 34px; padding: 22px 28px; border-left: 3px solid var(--orange);
-    background: rgba(255,107,53,0.07); border-radius: 0 6px 6px 0;
-    font-size: 15px; color: var(--ice); line-height: 1.6;
+  .dg-holding .h-name { font-family: Georgia, serif; font-size: 19px; font-weight: 700; letter-spacing: 0.04em; }
+  .dg-holding .h-sub { font-size: 10.5px; color: var(--orange); margin-top: 3px; letter-spacing: 0.06em; }
+  .dg-connector { width: 1px; height: 26px; background: var(--gray-line); margin: 0 auto; }
+  .dg-verticals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .dg-vert { border: 1px solid var(--gray-line); background: var(--white); padding: 16px 16px 14px; text-align: center; border-radius: 3px; }
+  .dg-vert.mid { border-color: var(--navy); border-width: 1.5px; }
+  .dg-vert .dv-name { font-family: Georgia, serif; font-size: 17px; font-weight: 700; color: var(--navy); }
+  .dg-vert .dv-model { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 700; margin-top: 3px; }
+  .dg-vert .dv-flow { font-size: 10.5px; color: var(--gray); margin-top: 8px; line-height: 1.4; }
+  .dg-loop {
+    margin-top: 16px; text-align: center; font-size: 11.5px;
+    color: var(--navy); font-weight: 600; padding: 12px 20px;
+    background: var(--paper-2); border-radius: 3px;
   }
-  .sc-line strong { color: var(--white); }
+  .dg-loop strong { color: var(--orange); }
 
-  /* ===== ECOSYSTEM DIAGRAM ===== */
-  .eco { display: flex; flex-direction: column; align-items: center; margin-top: 30px; }
-  .eco-holding {
-    background: var(--orange); color: var(--navy); text-align: center;
-    padding: 18px 40px; border-radius: 6px; margin-bottom: 8px;
-  }
-  .eco-holding .eh-name { font-family: Georgia, serif; font-size: 22px; font-weight: 700; }
-  .eco-holding .eh-sub { font-size: 12px; font-weight: 600; margin-top: 2px; }
-  .eco-conn { width: 2px; height: 32px; background: var(--line-strong); }
-  .eco-verts { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; width: 100%; }
-  .eco-vert { border: 1px solid var(--line-strong); border-radius: 6px; padding: 22px 20px; text-align: center; }
-  .eco-vert.mid { border-color: var(--orange); }
-  .eco-vert .ev-name { font-family: Georgia, serif; font-size: 19px; font-weight: 700; }
-  .eco-vert .ev-model { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 700; margin-top: 3px; }
-  .eco-vert .ev-flow { font-size: 12px; color: var(--ice-dim); margin-top: 10px; line-height: 1.5; }
-  .eco-loop { margin-top: 26px; text-align: center; font-size: 15px; color: var(--ice); max-width: 820px; line-height: 1.6; }
-  .eco-loop strong { color: var(--orange); }
+  /* ===== TRÊS VERTICAIS ===== */
+  .verticals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .vert { border: 1px solid var(--gray-line); padding: 22px 20px 20px; background: var(--white); position: relative; }
+  .vert.featured { background: var(--navy); border-color: var(--navy); }
+  .vert .v-model { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; color: var(--orange); }
+  .vert .v-name { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.01em; }
+  .vert.featured .v-name { color: var(--white); }
+  .vert .v-desc { font-size: 12.5px; line-height: 1.5; color: var(--gray); }
+  .vert.featured .v-desc { color: #C9D2E3; }
+  .vert .v-prods { margin-top: 12px; padding-top: 12px; border-top: 1px solid #2A3656; }
+  .vert .v-prod { font-size: 11px; line-height: 1.4; margin-bottom: 7px; color: #C9D2E3; }
+  .vert .v-prod:last-child { margin-bottom: 0; }
+  .vert .v-prod b { color: var(--orange); font-weight: 700; letter-spacing: 0.02em; }
+  .vert .v-tag { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--gray-line); font-size: 11px; color: var(--navy); font-weight: 600; }
+  .vert.featured .v-tag { border-top-color: #2A3656; color: var(--orange); }
+  .vert .v-role { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); font-weight: 700; margin-top: 10px; }
+  .vert.featured .v-role { color: #8A97B5; }
 
-  /* ===== PRODUCTS ===== */
-  .products { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 20px; }
-  .pcard { border: 1px solid var(--line-strong); border-radius: 6px; padding: 28px 24px; transition: transform 0.25s, border-color 0.25s; }
-  .pcard:hover { transform: translateY(-5px); border-color: var(--orange); }
-  .pcard .p-cat { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
-  .pcard .p-name { font-size: 26px; font-weight: 700; margin: 8px 0 4px; }
-  .pcard .p-origin { font-size: 13px; color: var(--ice-dim); font-style: italic; margin-bottom: 14px; }
-  .pcard .p-desc { font-size: 13.5px; color: var(--ice); line-height: 1.6; }
-  .pcard .p-price { margin-top: 16px; font-size: 16px; font-weight: 700; color: var(--orange-soft); font-family: Georgia, serif; }
+  /* ===== SOCIAL COMMERCE BANNER ===== */
+  .sc-banner { margin-top: 16px; background: var(--paper-2); border-left: 3px solid var(--orange); padding: 16px 22px; font-size: 13px; line-height: 1.5; color: var(--ink); }
+  .sc-banner strong { color: var(--navy); }
 
-  /* ===== CHART (bars) ===== */
-  .chart-wrap { margin-top: 40px; display: grid; grid-template-columns: 1fr 300px; gap: 50px; align-items: end; }
-  .bars { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; height: 340px; border-bottom: 1px solid var(--line-strong); padding-bottom: 0; }
-  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
-  .bar-stack { width: 100%; max-width: 80px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative; }
-  .bar-agency { width: 100%; background: var(--navy-soft); border-radius: 3px 3px 0 0; transition: height 1s ease; }
-  .bar-morsel { width: 100%; background: var(--orange); border-radius: 3px 3px 0 0; transition: height 1s ease; }
-  .bar-ebitda-dot { position: absolute; width: 11px; height: 11px; background: var(--white); border-radius: 50%; border: 2px solid var(--navy); }
-  .bar-val { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-  .bar-year { font-size: 13px; color: var(--ice-dim); margin-top: 12px; }
-  .chart-legend { display: flex; gap: 22px; margin-top: 22px; font-size: 12px; color: var(--ice-dim); }
-  .leg-item { display: flex; align-items: center; gap: 7px; }
-  .leg-sw { width: 13px; height: 13px; border-radius: 2px; }
-  .chart-kpis { display: flex; flex-direction: column; gap: 18px; }
-  .ck { border-left: 3px solid var(--orange); padding-left: 16px; }
-  .ck .ck-num { font-family: Georgia, serif; font-size: 30px; font-weight: 700; }
-  .ck .ck-lbl { font-size: 12px; color: var(--ice-dim); margin-top: 2px; }
+  /* ===== FLYWHEEL ===== */
+  .flywheel { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .fw-node { border: 1px solid var(--gray-line); background: var(--white); padding: 18px 18px 16px; border-radius: 3px; position: relative; }
+  .fw-node .fw-step { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+  .fw-node .fw-name { font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: var(--navy); margin: 6px 0 7px; }
+  .fw-node .fw-d { font-size: 11.5px; line-height: 1.5; color: var(--gray); }
+  .fw-summary { margin-top: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
+  .fw-sum-cell { background: var(--paper); padding: 14px 16px; }
+  .fw-sum-cell .fs-k { font-family: Georgia, serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+  .fw-sum-cell .fs-k span { color: var(--orange); }
+  .fw-sum-cell .fs-d { font-size: 11px; color: var(--gray); margin-top: 4px; }
 
   /* ===== ACUMULADO ===== */
-  .acum { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 24px; }
-  .acum-c { border: 1px solid var(--line-strong); border-radius: 6px; padding: 26px 22px; }
-  .acum-c.hot { background: var(--orange); border-color: var(--orange); }
-  .acum-c .a-num { font-family: Georgia, serif; font-size: 30px; font-weight: 700; }
-  .acum-c.hot .a-num { color: var(--navy); }
-  .acum-c .a-lbl { font-size: 13px; font-weight: 600; margin-top: 10px; }
-  .acum-c.hot .a-lbl { color: var(--navy); }
-  .acum-c .a-sub { font-size: 11px; color: var(--ice-dim); margin-top: 3px; }
-  .acum-c.hot .a-sub { color: rgba(10,22,40,0.7); }
+  .acum-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
+  .acum-cell { background: var(--paper); padding: 20px 18px; }
+  .acum-cell.featured { background: var(--navy); }
+  .acum-cell .ac-num { font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1; }
+  .acum-cell.featured .ac-num { color: var(--orange); }
+  .acum-cell .ac-lbl { font-size: 12px; font-weight: 700; color: var(--navy); margin-top: 10px; }
+  .acum-cell.featured .ac-lbl { color: var(--white); }
+  .acum-cell .ac-sub { font-size: 10.5px; color: var(--gray); margin-top: 3px; }
+  .acum-cell.featured .ac-sub { color: #C9D2E3; }
 
-  /* ===== CRAVE / MUFFIN ===== */
-  .crave-flow { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 24px; }
-  .cf { border: 1px solid var(--line-strong); border-radius: 6px; padding: 26px 22px; }
-  .cf .cf-n { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
-  .cf .cf-h { font-size: 19px; font-weight: 700; margin: 8px 0 8px; }
-  .cf .cf-d { font-size: 13px; color: var(--ice); line-height: 1.6; }
-  .exit-scn { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; margin-top: 30px; }
-  .es { border: 1px solid var(--line-strong); border-radius: 6px; padding: 18px 14px; text-align: center; }
-  .es.hot { background: var(--orange); border-color: var(--orange); }
-  .es .es-scn { font-size: 11px; color: var(--ice-dim); }
-  .es.hot .es-scn { color: var(--navy); }
-  .es .es-ret { font-family: Georgia, serif; font-size: 19px; font-weight: 700; margin: 6px 0 2px; }
-  .es.hot .es-ret { color: var(--navy); }
-  .es .es-roi { font-size: 13px; color: var(--orange-soft); font-weight: 700; }
-  .es.hot .es-roi { color: var(--navy); }
+  /* ===== TRACTION ===== */
+  .traction { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
+  .tr-cell { background: var(--paper); padding: 14px 12px; text-align: center; }
+  .tr-cell .tr-year { font-size: 11px; color: var(--gray); font-weight: 600; margin-bottom: 6px; }
+  .tr-cell .tr-rev { font-family: Georgia, serif; font-size: 17px; font-weight: 700; color: var(--navy); }
+  .tr-cell .tr-eb { font-size: 11px; color: var(--orange); margin-top: 3px; font-weight: 600; }
+  .tr-cell.peak { background: var(--navy); }
+  .tr-cell.peak .tr-year { color: #C9D2E3; }
+  .tr-cell.peak .tr-rev { color: var(--white); }
+  .hist-acum { margin-top: 12px; padding: 12px 18px; background: var(--paper-2); border-radius: 3px; font-size: 12.5px; color: var(--navy); }
+  .hist-acum strong { color: var(--navy); }
 
-  /* ===== VALUATION ===== */
-  .val-rows { margin-top: 24px; }
-  .val-row { display: grid; grid-template-columns: 200px 160px 1fr; gap: 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
-  .val-row .vr-asset { font-size: 20px; font-weight: 700; }
-  .val-row .vr-amt { font-family: Georgia, serif; font-size: 26px; font-weight: 700; color: var(--orange); }
-  .val-row .vr-basis { font-size: 13px; color: var(--ice-dim); line-height: 1.5; }
-  .val-row.total { border-bottom: none; border-top: 2px solid var(--orange); margin-top: 6px; }
-  .val-row.total .vr-asset { color: var(--orange); }
-  .val-row.total .vr-amt { font-size: 36px; }
+  /* ===== SWEAT EQUITY ===== */
+  .crave-intro { background: var(--navy); color: var(--white); padding: 22px 26px; border-radius: 3px; margin-bottom: 20px; }
+  .crave-intro .ci-title { font-family: Georgia, serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .crave-intro .ci-title span { color: var(--orange); }
+  .crave-intro .ci-text { font-size: 13px; line-height: 1.6; color: #C9D2E3; }
+  .crave-intro .ci-text strong { color: var(--white); }
+  .crave-flow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-bottom: 24px; }
+  .cf-step { background: var(--paper); padding: 16px 16px; }
+  .cf-step .cf-n { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+  .cf-step .cf-h { font-size: 14px; font-weight: 700; color: var(--navy); margin: 5px 0 6px; }
+  .cf-step .cf-d { font-size: 11.5px; line-height: 1.5; color: var(--gray); }
+  .smush-box { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  .smush-box > div { min-width: 0; }
+  .se-label { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); font-weight: 700; margin-bottom: 12px; }
+  .se-row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--gray-line); font-size: 13px; }
+  .se-row:last-child { border-bottom: none; }
+  .se-row .se-k { color: var(--navy); font-weight: 600; }
+  .se-row .se-v { font-family: Georgia, serif; font-weight: 700; color: var(--navy); }
+  .se-row.hi .se-v { color: var(--orange); font-size: 16px; }
+  .exit-table { width: 100%; border-collapse: collapse; }
+  .exit-table .et-label { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); font-weight: 700; padding-bottom: 12px; text-align: left; }
+  .exit-table td { padding: 9px 0; border-bottom: 1px solid var(--gray-line); font-size: 13px; }
+  .exit-table td:last-child { text-align: right; }
+  .exit-table .ex-scn { color: var(--navy); font-weight: 600; }
+  .exit-table .ex-val { font-family: Georgia, serif; font-weight: 700; color: var(--navy); }
+  .exit-table .ex-roi { color: var(--orange); font-weight: 700; }
+  .exit-table tr.expected td { border-bottom: none; border-top: 2px solid var(--navy); padding-top: 12px; }
+  .exit-table tr.expected .ex-scn { color: var(--orange); }
+
+  /* ===== FINANCIAL LOGIC ===== */
+  .logic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  .logic-card { border: 1px solid var(--gray-line); background: var(--white); padding: 18px 18px 16px; border-radius: 3px; }
+  .logic-card.mult { border-color: var(--navy); border-width: 1.5px; }
+  .logic-card .lc-role { font-size: 24px; font-family: Georgia, serif; font-weight: 700; color: var(--orange); line-height: 1; }
+  .logic-card .lc-unit { font-size: 13px; font-weight: 700; color: var(--navy); margin: 8px 0 8px; }
+  .logic-card .lc-row { font-size: 11.5px; color: var(--gray); line-height: 1.5; }
+  .logic-card .lc-row b { color: var(--navy); font-weight: 700; }
+
+  /* ===== VALUATION TABLE ===== */
+  .val-table { width: 100%; border-collapse: collapse; }
+  .val-table th { text-align: left; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); font-weight: 600; padding: 0 0 12px; border-bottom: 1px solid var(--gray-line); }
+  .val-table th:nth-child(1), .val-table td:nth-child(1) { width: 180px; }
+  .val-table th:nth-child(2), .val-table td:nth-child(2) { text-align: right; width: 120px; padding-right: 28px; }
+  .val-table th:nth-child(3) { padding-left: 8px; }
+  .val-table td { padding: 16px 0; border-bottom: 1px solid var(--gray-line); font-size: 14px; vertical-align: middle; }
+  .val-table td:nth-child(3) { padding-left: 8px; }
+  .val-table .v-asset { font-weight: 700; color: var(--navy); font-size: 16px; }
+  .val-table .v-amount { font-family: Georgia, serif; font-weight: 700; font-size: 19px; color: var(--navy); text-align: right; }
+  .val-table .v-basis { font-size: 12px; color: var(--gray); line-height: 1.45; }
+  .val-table tr.total td { border-bottom: none; padding-top: 18px; }
+  .val-table tr.total .v-asset { color: var(--orange); }
+  .val-table tr.total .v-amount { color: var(--orange); font-size: 24px; }
+  .val-key { margin-top: 16px; padding: 14px 20px; background: var(--navy); color: var(--white); border-radius: 3px; font-size: 13px; line-height: 1.55; }
+  .val-key strong { color: var(--orange); }
+
+  /* ===== USE OF PROCEEDS ===== */
+  .uop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .uop-item { border-top: 3px solid var(--navy); padding-top: 14px; }
+  .uop-item.b { border-top-color: var(--orange); }
+  .uop-item.c { border-top-color: var(--gray); }
+  .uop-pct { font-family: Georgia, serif; font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1; }
+  .uop-amt { font-size: 13px; font-weight: 700; color: var(--orange); margin: 4px 0 8px; }
+  .uop-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+  .uop-desc { font-size: 11.5px; line-height: 1.5; color: var(--gray); }
 
   /* ===== OFFER ===== */
-  .offer { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 24px; }
-  .oc { border: 1px solid var(--line-strong); border-radius: 6px; padding: 32px 26px; text-align: center; }
-  .oc.hot { background: var(--orange); border-color: var(--orange); }
-  .oc .o-lbl { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
-  .oc.hot .o-lbl { color: var(--navy); }
-  .oc .o-val { font-family: Georgia, serif; font-size: 52px; font-weight: 700; margin: 10px 0 6px; }
-  .oc.hot .o-val { color: var(--navy); }
-  .oc .o-sub { font-size: 13px; color: var(--ice-dim); }
-  .oc.hot .o-sub { color: rgba(10,22,40,0.75); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
+  .offer-cell { background: var(--paper); padding: 16px 14px; }
+  .offer-cell .o-lbl { font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); font-weight: 700; }
+  .offer-cell .o-val { font-family: Georgia, serif; font-size: 26px; font-weight: 700; color: var(--navy); margin-top: 6px; line-height: 1; }
+  .offer-cell.accent { background: var(--navy); }
+  .offer-cell.accent .o-lbl { color: var(--orange); }
+  .offer-cell.accent .o-val { color: var(--white); }
+  .struct-list { list-style: none; }
+  .struct-list li { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--gray-line); font-size: 13px; }
+  .struct-list li:last-child { border-bottom: none; }
+  .struct-list .s-key { font-weight: 700; color: var(--navy); min-width: 116px; }
+  .struct-list .s-val { color: var(--gray); }
 
-  /* ===== CLOSE ===== */
-  .close-sec { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; }
-  .close-sec h2 { font-size: clamp(34px, 6vw, 68px); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 24px; }
-  .close-sec .c-accent { color: var(--orange); }
-  .close-line { font-size: 18px; color: var(--ice); margin-bottom: 40px; font-style: italic; }
-  .close-deal { font-family: Georgia, serif; font-size: 24px; font-weight: 700; padding: 24px 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); margin-bottom: 24px; }
-  .close-contact { font-size: 15px; color: var(--ice); }
-  .close-contact a { color: var(--orange); text-decoration: none; }
+  /* ===== WHY NOW ===== */
+  .whynow { background: var(--paper-2); border-radius: 3px; padding: 24px 28px; }
+  .wn-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 32px; margin-bottom: 18px; }
+  .wn-pt { font-size: 12.5px; line-height: 1.5; color: var(--ink); padding-left: 16px; position: relative; }
+  .wn-pt::before { content: "→"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+  .wn-chain { text-align: center; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: var(--navy); padding-top: 16px; border-top: 1px solid var(--gray-line); }
+  .wn-chain span { color: var(--orange); }
 
-  .footer-mini { text-align: center; padding: 30px; font-size: 11px; color: var(--ice-dim); border-top: 1px solid var(--line); }
+  /* ===== FINAL NARRATIVE ===== */
+  .final-narr { background: var(--navy); color: var(--white); border-radius: 3px; padding: 28px 32px; }
+  .fn-prop { font-family: Georgia, serif; font-size: 22px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .fn-prop span { color: var(--orange); }
+  .fn-text { font-size: 13px; line-height: 1.65; color: #C9D2E3; max-width: 860px; margin-bottom: 18px; }
+  .fn-text strong { color: var(--white); }
+  .fn-engines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #2A3656; border: 1px solid #2A3656; border-radius: 2px; overflow: hidden; }
+  .fn-eng { background: var(--navy); padding: 14px 16px; }
+  .fn-eng .fe-n { font-family: Georgia, serif; font-size: 15px; font-weight: 700; color: var(--white); }
+  .fn-eng .fe-r { font-size: 11px; color: var(--orange); margin-top: 4px; }
+  .fn-eng .fe-d { font-size: 10.5px; color: #8A97B5; margin-top: 6px; line-height: 1.4; }
+  .fn-close { margin-top: 18px; padding-top: 16px; border-top: 1px solid #2A3656; font-family: Georgia, serif; font-size: 15px; font-style: italic; color: var(--white); text-align: center; }
+  .fn-close span { color: var(--orange); }
 
-  /* responsive */
-  @media (max-width: 860px) {
-    .nav { padding: 14px 22px; }
-    section, .hero { padding-left: 22px; padding-right: 22px; }
-    .verticals, .products, .crave-flow, .offer { grid-template-columns: 1fr; }
-    .acum { grid-template-columns: repeat(2,1fr); }
-    .eco-verts { grid-template-columns: 1fr; }
-    .chart-wrap { grid-template-columns: 1fr; }
-    .exit-scn { grid-template-columns: repeat(2,1fr); }
-    .val-row { grid-template-columns: 1fr; gap: 6px; }
-    .hero-stats { gap: 28px; }
-    .nav-name { font-size: 12px; }
+  /* ===== FOOTER ===== */
+  .foot { margin-top: 48px; padding-top: 18px; border-top: 2px solid var(--navy); display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; color: var(--gray); }
+  .foot .contact { color: var(--navy); font-weight: 600; }
+  .disclaimer { margin-top: 14px; font-size: 9.5px; line-height: 1.5; color: var(--gray); max-width: 820px; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: var(--white); }
+    .sheet { padding: 28px 36px; max-width: 100%; }
+    .vert.featured, .offer-cell.accent, .tr-cell.peak, .acum-cell.featured,
+    .crave-intro, .val-key, .final-narr, .dg-holding { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section { margin-bottom: 28px; page-break-inside: avoid; }
+  }
+
+  @media (max-width: 720px) {
+    .sheet { padding: 32px 22px; }
+    .hero h1 { font-size: 28px; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .verticals, .two-col, .offer-grid, .flywheel, .logic, .smush-box, .wn-points, .fn-engines, .dg-verticals { grid-template-columns: 1fr; }
+    .traction, .fw-summary { grid-template-columns: repeat(2, 1fr); }
+    .doc-meta { flex-direction: column; gap: 4px; }
   }
 </style>
 </head>
 <body>
+<div class="sheet">
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-brand">
-    <div class="nav-mark">▶</div>
-    <div class="nav-name">SNACK CONTENT</div>
-  </div>
-  <a href="#oferta" class="nav-cta">A oferta</a>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="eyebrow">Creator economy enterprise</div>
-  <h1 class="serif">Três formas de<br>capturar valor.<br><span class="accent">Uma máquina só.</span></h1>
-  <p class="hero-sub">12 anos construindo a maior operação de creator economy enterprise do Brasil — agora monetizada como serviço, produto de IA e equity em marcas.</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="hs-num serif">R$ 178,8M</div><div class="hs-lbl">Faturamento acumulado 2020-2025</div></div>
-    <div class="hero-stat"><div class="hs-num serif">R$ 32,5M</div><div class="hs-lbl">EBITDA acumulado</div></div>
-    <div class="hero-stat"><div class="hs-num serif">7 marcas tier 1</div><div class="hs-lbl">Guaraná, P&G, L'Oréal, Sony…</div></div>
-    <div class="hero-stat"><div class="hs-num serif">3 verticais</div><div class="hs-lbl">Agency · Bento · Muffin</div></div>
-  </div>
-  <div class="scroll-hint"><span class="dot"></span> role para explorar</div>
-</div>
-
-<!-- O QUE FAZEMOS -->
-<section class="reveal">
-  <div class="eyebrow">Snack Agency · o núcleo</div>
-  <h2 class="section-title serif">Três frentes de serviço sobre<br>uma máquina operacional única</h2>
-  <p class="lede">A Agency é o coração: o que gera caixa, relacionamento e dados. Conteúdo em escala industrial, influência com curadoria, e social commerce que converte. Tudo o mais nasce daqui.</p>
-  <div class="verticals" style="margin-top:40px;">
-    <div class="vcard"><div class="v-tag">Conteúdo</div><div class="v-name serif" style="font-size:22px;">Volume + consistência</div><div class="v-desc">Produção industrial pra feed, com qualidade de marca e velocidade de creator.</div></div>
-    <div class="vcard"><div class="v-tag">Influência</div><div class="v-name serif" style="font-size:22px;">Rede + curadoria</div><div class="v-desc">Gestão e operação de creators pra campanhas always-on das maiores marcas.</div></div>
-    <div class="vcard"><div class="v-tag">Social Commerce</div><div class="v-name serif" style="font-size:22px;">Conteúdo que vende</div><div class="v-desc">Da descoberta à conversão dentro das plataformas. TikTok Shop, lives, afiliados.</div></div>
-  </div>
-</section>
-
-<!-- MARCAS -->
-<div class="band-wrap">
-<section class="reveal">
-  <div class="eyebrow">Quem confia em nós</div>
-  <h2 class="section-title serif">Líderes de categoria que<br>não podem errar no feed</h2>
-  <div class="brands-row">
-    <span class="brand-chip">Guaraná Antarctica</span>
-    <span class="brand-chip">P&amp;G</span>
-    <span class="brand-chip">L'Oréal</span>
-    <span class="brand-chip">Gillette Venus</span>
-    <span class="brand-chip">KFC</span>
-    <span class="brand-chip">Fleury</span>
-    <span class="brand-chip">Banco Pan</span>
-    <span class="brand-chip">Brahma</span>
-    <span class="brand-chip">Budweiser</span>
-    <span class="brand-chip">Magalu</span>
-    <span class="brand-chip">Whirlpool</span>
-    <span class="brand-chip">Sony</span>
-    <span class="brand-chip">Britânia</span>
-    <span class="brand-chip">Airbnb</span>
-  </div>
-  <p class="brands-cases">Cases de referência: plataforma 360 do Guaraná (top 5 canal de marca mais engajado do mundo, 500+ creators, 3K+ vídeos) · maior operação de influência de beleza do Carnaval (Gillette Venus, +1,9M engajamentos) · social listening KFC (13M views em &lt;1 mês, 89K interações).</p>
-</section>
-</div>
-
-<!-- TESE -->
-<section class="reveal">
-  <div class="eyebrow">A tese</div>
-  <p class="statement serif"><span class="dim">Agência pura morre.<br>SaaS puro estagna.</span><br>O que cresce é expertise enterprise <span class="accent">destilada em produto e em marca.</span></p>
-  <p class="lede" style="margin-top:30px;">Passamos 12 anos resolvendo os problemas de creator economy das maiores marcas do Brasil. Esse conhecimento não escala como serviço — escala como produto (Bento) e como equity em marcas próprias (Muffin). A mesma máquina. Três formas de capturar o valor que ela gera.</p>
-</section>
-
-<!-- SOCIAL COMMERCE -->
-<div class="band-wrap">
-<section class="reveal">
-  <div class="eyebrow">O next big thing</div>
-  <h2 class="section-title serif">Social commerce: quando o<br>conteúdo ganha botão de compra</h2>
-  <p class="lede">O afiliado-creator deixa de ser mídia e vira canal de venda. Quem dominar o match entre creator e produto via IA vai dominar o varejo da próxima década. <strong>A Snack já começou — com a L'Oréal.</strong></p>
-  <div class="verticals" style="margin-top:40px;">
-    <div class="vcard"><div class="v-tag">A virada</div><div class="v-name serif" style="font-size:21px;">Mídia → Venda</div><div class="v-desc">TikTok Shop, lives e afiliados transformaram o feed em ponto de venda. O conteúdo fecha a compra na mesma tela.</div></div>
-    <div class="vcard"><div class="v-tag">A tese</div><div class="v-name serif" style="font-size:21px;">Afiliados protagonistas</div><div class="v-desc">O creator-afiliado vira o novo canal de marketing-venda das marcas. Quem vende por ela, em escala, com performance medível.</div></div>
-    <div class="vcard"><div class="v-tag">Nossa vantagem</div><div class="v-name serif" style="font-size:21px;">Pioneiros com L'Oréal</div><div class="v-desc">Já operamos social commerce enterprise. O ShopFlow (Bento) faz o match creator×produto via IA. Validado por C-level global.</div></div>
-  </div>
-</section>
-</div>
-
-<!-- O MODELO / 3 VERTICAIS -->
-<section class="reveal">
-  <div class="eyebrow">O modelo</div>
-  <h2 class="section-title serif">Três formas de monetizar a<br>mesma operação</h2>
-  <div class="verticals">
-    <div class="vcard">
-      <div class="v-tag">Serviço · fee</div>
-      <div class="v-name serif">Snack Agency</div>
-      <div class="v-desc">Conteúdo, influência e social commerce pras maiores marcas do Brasil. O núcleo que gera caixa, relacionamento e dados.</div>
-      <div class="v-metric">R$ 37,8M faturamento 2026</div>
+  <!-- HEADER -->
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-mark">▶</div>
+      <div class="brand-name">SNACK GROUP</div>
     </div>
-    <div class="vcard featured">
-      <div class="v-tag">Produtos de IA · license</div>
-      <div class="v-name serif">Bento</div>
-      <div class="v-desc">Empresa de produtos de IA vertical pra creator economy. Cada demanda de marca tier 1 vira produto proprietário licenciável.</div>
-      <div class="v-metric">ARR R$ 31M em 2030</div>
-    </div>
-    <div class="vcard">
-      <div class="v-tag">Marcas insurgentes · equity</div>
-      <div class="v-name serif">Muffin</div>
-      <div class="v-desc">Marcas D2C TikTok-native construídas com a máquina de conteúdo da Snack, em troca de equity. Audiência primeiro, produto depois.</div>
-      <div class="v-metric">Upside venture · sem capital próprio</div>
-    </div>
+    <div class="confidential">Confidential · Investment One-Pager</div>
   </div>
-  <div class="sc-line">
-    <strong>O fio condutor é o social commerce.</strong> A Agency opera, a Bento produtiza (ShopFlow) e a Muffin constrói marcas que nascem dele.
+  <div class="doc-meta">
+    <span>Snack Group · Captação 2026</span>
+    <span>A feed-first creator economy company · Jun 2026</span>
   </div>
-</section>
 
-<!-- ECOSSISTEMA -->
-<div class="band-wrap">
-<section class="reveal">
-  <div class="eyebrow">O ecossistema</div>
-  <h2 class="section-title serif">As três verticais<br>se autoalimentam</h2>
-  <div class="eco">
-    <div class="eco-holding">
-      <div class="eh-name">Snack Holding</div>
-      <div class="eh-sub">VEÍCULO DE CAPTAÇÃO · CONTROLA AS TRÊS VERTICAIS</div>
-    </div>
-    <div class="eco-conn"></div>
-    <div class="eco-verts">
-      <div class="eco-vert"><div class="ev-name">Snack Agency</div><div class="ev-model">Fee</div><div class="ev-flow">Gera caixa, dados e pipeline → alimenta Bento e Muffin</div></div>
-      <div class="eco-vert mid"><div class="ev-name">Bento</div><div class="ev-model">License</div><div class="ev-flow">Produtiza a operação → vira diferencial competitivo da Agency</div></div>
-      <div class="eco-vert"><div class="ev-name">Muffin</div><div class="ev-model">Equity</div><div class="ev-flow">Marcas próprias → cases breakthrough voltam pra Agency</div></div>
-    </div>
-    <div class="eco-loop">As três se autoalimentam: <strong>Agency gera dados → Bento vira produto → Muffin vira marca → cases voltam pra Agency.</strong> Mesma máquina, mesmo time, três formas de capturar valor.</div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">A feed-first creator economy company</div>
+    <h1 class="serif">Uma máquina operacional.<br>Três motores de valor.</h1>
+    <p class="lede">A Snack passou 12 anos construindo uma das principais operações <strong>feed-first</strong> para marcas enterprise no Brasil. Essa base agora é monetizada em três camadas complementares — <strong>serviço, software e equity</strong>: a Agency gera caixa, dados e cases com marcas tier 1; a Builders transforma essa inteligência operacional em produtos de IA licenciáveis; e a SoldOut transforma cultura, creators e comunidades em marcas D2C com upside patrimonial.</p>
+    <p class="tagline">One operating machine. Three value engines: service, software and equity.</p>
   </div>
-</section>
-</div>
 
-<!-- BENTO -->
-<section class="reveal">
-  <div class="eyebrow">Bento · a vertical de produtos de IA</div>
-  <h2 class="section-title serif">Empresa de produtos de IA<br>vertical pra creator economy</h2>
-  <p class="lede">O next big thing da IA é verticalizar. Modelo genérico virou commodity — quem ganha é quem entende o mercado antes da tecnologia. Nós entendemos creator economy melhor que qualquer fundo ou big tech.</p>
-  <div class="products">
-    <div class="pcard"><div class="p-cat">Produção</div><div class="p-name serif">Vox</div><div class="p-origin">nasceu da Estácio</div><div class="p-desc">CRM gamificado de conteúdo — o "Duolingo da criação". Gera volume consistente e on-brand de quem produz pra marca.</div><div class="p-price">~R$ 22k/mês</div></div>
-    <div class="pcard"><div class="p-cat">Conexão</div><div class="p-name serif">ShopFlow</div><div class="p-origin">nasceu da L'Oréal</div><div class="p-desc">Match por IA entre afiliados TikTok Shop e a persona da marca. Transcreve, lê persona, conecta. Validado por C-level global.</div><div class="p-price">~R$ 25k/mês</div></div>
-    <div class="pcard"><div class="p-cat">Escuta</div><div class="p-name serif">TREMOR</div><div class="p-origin">nasceu do Guaraná</div><div class="p-desc">Social listening e brand intelligence com lente de creator economy. Entende o que move o feed antes da marca reagir.</div><div class="p-price">~R$ 18k/mês</div></div>
+  <!-- KEY METRICS -->
+  <div class="stat-strip">
+    <div class="stat"><div class="num serif">R$ 178,8M</div><div class="lbl">Faturamento acumulado 2020–2025</div></div>
+    <div class="stat"><div class="num serif">R$ 32,5M</div><div class="lbl">EBITDA acumulado em 6 anos</div></div>
+    <div class="stat"><div class="num serif">12 anos</div><div class="lbl">Operação enterprise em creator economy</div></div>
+    <div class="stat"><div class="num serif">R$ 80M</div><div class="lbl">Receita consolidada 2030E</div></div>
   </div>
-</section>
 
-<!-- GRÁFICO / PROJEÇÃO -->
-<div class="band-wrap">
-<section class="reveal">
-  <div class="eyebrow">Projeção consolidada</div>
-  <h2 class="section-title serif">De funil de serviço<br>a motor de ARR</h2>
-  <p class="lede">A Agency segura o caixa enquanto a Bento vira o motor de crescimento. Juntas: receita 3x e EBITDA 17x em 4 anos.</p>
-  <div class="chart-wrap">
-    <div>
-      <div class="bars" id="bars">
-        <!-- bars via JS -->
+  <!-- BRANDS -->
+  <div class="brands">
+    <div class="brands-label">Marcas atendidas — a validação da tese</div>
+    <div class="brands-grid">
+      <span class="brand-chip">Guaraná Antarctica</span>
+      <span class="brand-chip">P&amp;G</span>
+      <span class="brand-chip">L'Oréal</span>
+      <span class="brand-chip">KFC</span>
+      <span class="brand-chip">Fleury</span>
+      <span class="brand-chip">Banco Pan</span>
+      <span class="brand-chip">Brahma</span>
+      <span class="brand-chip">Budweiser</span>
+      <span class="brand-chip">Magalu</span>
+      <span class="brand-chip">Whirlpool</span>
+      <span class="brand-chip">Sony</span>
+      <span class="brand-chip">Britânia</span>
+      <span class="brand-chip">Airbnb</span>
+    </div>
+    <div class="brands-foot">Esses clientes validam a tese central do grupo: os produtos da Builders e as oportunidades da SoldOut não nascem de hipótese — nascem de demandas reais, recorrentes e sofisticadas de marcas enterprise.</div>
+  </div>
+
+  <!-- SECTION 1: GROUP STRUCTURE -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <span class="section-title serif">A estrutura: uma empresa, três motores</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="diagram">
+      <div class="dg-holding">
+        <div class="h-name">Snack Group</div>
+        <div class="h-sub">UMA EMPRESA · UM CAP TABLE · TRÊS MOTORES DE VALOR</div>
       </div>
-      <div class="chart-legend">
-        <div class="leg-item"><span class="leg-sw" style="background:var(--navy-soft);"></span> Agency (receita)</div>
-        <div class="leg-item"><span class="leg-sw" style="background:var(--orange);"></span> Bento (receita)</div>
-        <div class="leg-item"><span class="leg-sw" style="background:var(--white);border-radius:50%;"></span> EBITDA consolidado</div>
+      <div class="dg-connector"></div>
+      <div class="dg-verticals">
+        <div class="dg-vert">
+          <div class="dv-name">Snack Agency</div>
+          <div class="dv-model">Serviço · builds attention</div>
+          <div class="dv-flow">Gera caixa, relacionamento, dados e cases → alimenta Builders e SoldOut</div>
+        </div>
+        <div class="dg-vert mid">
+          <div class="dv-name">Snack Builders</div>
+          <div class="dv-model">Software · builds software</div>
+          <div class="dv-flow">Produtiza a inteligência → ARR recorrente, IP próprio, múltiplo de tech</div>
+        </div>
+        <div class="dg-vert">
+          <div class="dv-name">Snack SoldOut</div>
+          <div class="dv-model">Equity · builds demand</div>
+          <div class="dv-flow">Marcas D2C creator-led → upside patrimonial; cases voltam pra Agency</div>
+        </div>
+      </div>
+      <div class="dg-loop">
+        Não são três negócios dispersos — são <strong>três unidades dentro de uma empresa só.</strong> O investidor compra um cap table e leva os três motores que se autoalimentam: Agency gera dados → Builders vira software → SoldOut vira marca → cases voltam pra Agency.
       </div>
     </div>
-    <div class="chart-kpis">
-      <div class="ck"><div class="ck-num serif">R$ 80M</div><div class="ck-lbl">Receita 2030 · vs R$ 27M em 2026</div></div>
-      <div class="ck"><div class="ck-num serif">R$ 35M</div><div class="ck-lbl">EBITDA 2030 · vs R$ 2M em 2026</div></div>
-      <div class="ck"><div class="ck-num serif">43%</div><div class="ck-lbl">Margem EBITDA 2030 · vs 7% em 2026</div></div>
+  </div>
+
+  <!-- SECTION 2: THREE ENGINES -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <span class="section-title serif">Os três motores em detalhe</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="verticals">
+      <div class="vert">
+        <div class="v-model">Serviço · fee</div>
+        <div class="v-name serif">Snack Agency</div>
+        <div class="v-desc">Ajuda marcas enterprise a pensarem e agirem como creators: estratégia feed-first, conteúdo always-on, social video, influência, creators, produção, community management, social commerce, TikTok Shop e inteligência cultural aplicada.</div>
+        <div class="v-role">Investor role · cashflow engine</div>
+        <div class="v-tag">We turn brands into creators — and creators into growth.</div>
+      </div>
+      <div class="vert featured">
+        <div class="v-model">Software · license</div>
+        <div class="v-name serif">Snack Builders</div>
+        <div class="v-desc">A product company do grupo. Transforma mais de uma década de inteligência operacional em plataformas proprietárias de IA, dados e software — não como área interna de inovação, mas como empresa de produtos licenciáveis.</div>
+        <div class="v-prods">
+          <div class="v-prod"><b>KOLLECT</b> — Creator Intelligence: seleção e gestão de creators e KOLs por dados, brand fit, performance e risco.</div>
+          <div class="v-prod"><b>TREMOR</b> — Culture &amp; Trend Intelligence: social listening e sinais emergentes antes do pico.</div>
+          <div class="v-prod"><b>SHOPFLOW</b> — Social Commerce Intelligence: afiliados, creators e performance em TikTok Shop e live commerce.</div>
+        </div>
+        <div class="v-role">Investor role · software multiple engine</div>
+        <div class="v-tag">We turn creator economy intelligence into scalable software.</div>
+      </div>
+      <div class="vert">
+        <div class="v-model">Equity · ventures</div>
+        <div class="v-name serif">Snack SoldOut</div>
+        <div class="v-desc">O venture studio de marcas D2C. Cria, investe e escala marcas social-first nascidas de cultura, creators, comunidades e demanda real do feed. Constrói desejo antes da prateleira — a Snack entra como sócia operacional, em troca de participação.</div>
+        <div class="v-role">Investor role · venture upside engine</div>
+        <div class="v-tag">Creator-led brands built to sell out · We turn culture into consumer demand.</div>
+      </div>
+    </div>
+    <div class="sc-banner">
+      <strong>O social commerce é o fio condutor entre as três unidades.</strong> A Agency opera conteúdo, creators, influência e TikTok Shop; a Builders transforma essa operação em plataformas como SHOPFLOW; a SoldOut usa essa infraestrutura para criar marcas D2C nascidas do feed. <em>Content with a buy button is the next chapter of the creator economy — Snack Group is positioned to operate, productize and own it.</em>
     </div>
   </div>
-</section>
-</div>
 
-<!-- HISTÓRICO ACUMULADO -->
-<section class="reveal">
-  <div class="eyebrow">O histórico da Agency · 2020-2025</div>
-  <h2 class="section-title serif">Seis anos de operação<br>rentável e auditada</h2>
-  <p class="lede">Uma base de caixa sólida sobre a qual Bento e Muffin são construídas. Ao longo do período, a Snack migrou deliberadamente de receita de intermediação (baixa margem) para fee de relacionamento com tier 1: a margem de contribuição subiu de 37% para 69%.</p>
-  <div class="acum">
-    <div class="acum-c"><div class="a-num serif">R$ 178,8M</div><div class="a-lbl">Faturamento acumulado</div><div class="a-sub">antes do repasse</div></div>
-    <div class="acum-c"><div class="a-num serif">R$ 95,1M</div><div class="a-lbl">Margem de contribuição</div><div class="a-sub">57% da receita líquida</div></div>
-    <div class="acum-c hot"><div class="a-num serif">R$ 32,5M</div><div class="a-lbl">EBITDA acumulado</div><div class="a-sub">6 anos</div></div>
-    <div class="acum-c"><div class="a-num serif">R$ 21,7M</div><div class="a-lbl">Lucro líquido</div><div class="a-sub">resultado consolidado</div></div>
-  </div>
-</section>
-
-<!-- MUFFIN / CRAVE -->
-<div class="band-wrap">
-<section class="reveal">
-  <div class="eyebrow">Muffin · marcas insurgentes</div>
-  <h2 class="section-title serif">A Snack vira sócia de marcas<br>sem investir capital</h2>
-  <p class="lede">A Muffin não compra equity com dinheiro — compra com operação. A Snack aloca a mesma máquina de conteúdo que opera L'Oréal e Guaraná em marcas D2C insurgentes, em troca de participação. <strong>O custo é a operação (sweat equity); o retorno é equity de alto múltiplo.</strong></p>
-  <div class="crave-flow">
-    <div class="cf"><div class="cf-n">01 · Entrega</div><div class="cf-h serif">Operação completa</div><div class="cf-d">Atendimento, afiliados, shop manager, data, conteúdo + ferramentas Bento. Serviço de ~US$ 8k/mês.</div></div>
-    <div class="cf"><div class="cf-n">02 · Recebe</div><div class="cf-h serif">15% a 20% de equity</div><div class="cf-d">Sócia operacional, vesting 24m, cliff 3m, aceleração 100% em venda. Voting seat no board.</div></div>
-    <div class="cf"><div class="cf-n">03 · Custo total</div><div class="cf-h serif">~US$ 192k / marca</div><div class="cf-d">Sem desembolso de capital financeiro — é a operação que já existe, alocada em troca de equity.</div></div>
-  </div>
-  <p class="lede" style="margin-top:40px;font-size:14px;color:var(--ice-dim);">Caso âncora · Smush (alimentos funcionais, EUA) — retorno por cenário de saída:</p>
-  <div class="exit-scn">
-    <div class="es"><div class="es-scn">Acqui-hire $10M</div><div class="es-ret serif">US$ 1,1M</div><div class="es-roi">6x</div></div>
-    <div class="es"><div class="es-scn">Moderada $30M</div><div class="es-ret serif">US$ 3,4M</div><div class="es-roi">17x</div></div>
-    <div class="es"><div class="es-scn">Boa $80M</div><div class="es-ret serif">US$ 9,0M</div><div class="es-roi">47x</div></div>
-    <div class="es"><div class="es-scn">Excelente $220M</div><div class="es-ret serif">US$ 24,6M</div><div class="es-roi">128x</div></div>
-    <div class="es hot"><div class="es-scn">Esperado ponderado</div><div class="es-ret serif">US$ 6,1M</div><div class="es-roi">32x</div></div>
-  </div>
-  <div class="sc-line" style="margin-top:34px;">Por que a Muffin não entra no valuation: <strong>é upside venture não consolidado.</strong> O downside é o custo de serviço; o upside é equity de marca em escala. Opcionalidade pura sobre capacidade que a Snack já tem.</div>
-</section>
-</div>
-
-<!-- VALUATION -->
-<section class="reveal">
-  <div class="eyebrow">Valuation</div>
-  <h2 class="section-title serif">R$ 75M pre-money,<br>defensável por partes</h2>
-  <p class="lede">Cada peça aguenta auditoria isolada. Agency por DCF strategic, Bento ancorada no BP próprio, Muffin não precificada.</p>
-  <div class="val-rows">
-    <div class="val-row"><div class="vr-asset serif">Snack Agency</div><div class="vr-amt">R$ 35M</div><div class="vr-basis">DCF · WACC 12% (lente de comprador strategic). Confirma o piso de caixa.</div></div>
-    <div class="val-row"><div class="vr-asset serif">Bento</div><div class="vr-amt">R$ 40M</div><div class="vr-basis">ARR externo 2028 (R$ 8,7M) × 4,6x — metade do múltiplo de SaaS vertical. Ancorado em BP próprio.</div></div>
-    <div class="val-row"><div class="vr-asset serif">Muffin</div><div class="vr-amt">R$ 0</div><div class="vr-basis">Upside não precificado. Smush e pipeline entram como opção gratuita.</div></div>
-    <div class="val-row total"><div class="vr-asset serif">Total pre-money</div><div class="vr-amt">R$ 75M</div><div class="vr-basis">Agency confirma piso por DCF · Bento puxa por ARR forward · Muffin é opcionalidade.</div></div>
-  </div>
-</section>
-
-<!-- OFERTA -->
-<div class="band-wrap" id="oferta">
-<section class="reveal">
-  <div class="eyebrow">O que estamos pedindo</div>
-  <h2 class="section-title serif">A oferta</h2>
-  <div class="offer">
-    <div class="oc"><div class="o-lbl">Captação</div><div class="o-val serif">R$ 8M</div><div class="o-sub">em equity primário, via Snack Holding</div></div>
-    <div class="oc"><div class="o-lbl">Valuation</div><div class="o-val serif">R$ 75M</div><div class="o-sub">pre-money · Agency + Bento</div></div>
-    <div class="oc hot"><div class="o-lbl">Diluição</div><div class="o-val serif">9,6%</div><div class="o-sub">founders mantêm 90,4%</div></div>
-  </div>
-  <div class="acum" style="margin-top:30px;">
-    <div class="acum-c"><div class="a-num serif">75%</div><div class="a-lbl">MBO — saída Biosphera</div><div class="a-sub">R$ 6,0M · cap table limpo</div></div>
-    <div class="acum-c"><div class="a-num serif">15%</div><div class="a-lbl">GTM Bento</div><div class="a-sub">R$ 1,2M · contratos externos</div></div>
-    <div class="acum-c"><div class="a-num serif">10%</div><div class="a-lbl">Giro + Muffin</div><div class="a-sub">R$ 0,8M · primeiro deal</div></div>
-    <div class="acum-c"><div class="a-num serif">30 dias</div><div class="a-lbl">Term sheet</div><div class="a-sub">DD 60d · closing jul/26</div></div>
-  </div>
-</section>
-</div>
-
-<!-- FECHAMENTO -->
-<section class="close-sec reveal">
-  <div class="eyebrow">Snack Content</div>
-  <h2 class="serif">Três formas de capturar<br>o valor da <span class="c-accent">creator economy.</span></h2>
-  <p class="close-line">Serviço que gera caixa. Produtos que escalam. Marcas que viram equity.</p>
-  <div class="close-deal">Snack Holding · R$ 8M · R$ 75M pre-money · 9,6%</div>
-  <p class="close-contact">Nelson Botega + Vitor Knijnik · <a href="mailto:nelson@redesnack.com.br">nelson@redesnack.com.br</a></p>
-</section>
-
-<div class="footer-mini">Snack Content · Confidencial · Captação 2026</div>
-
-<script>
-  // Reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Build chart bars
-  const data = [
-    { year: '2026', agency: 25.8, morsel: 1.4, ebitda: 2.0 },
-    { year: '2027', agency: 29.0, morsel: 6.2, ebitda: 6.0 },
-    { year: '2028', agency: 32.5, morsel: 14.8, ebitda: 12.8 },
-    { year: '2029', agency: 36.0, morsel: 26.3, ebitda: 23.0 },
-    { year: '2030', agency: 40.0, morsel: 40.1, ebitda: 34.7 },
-  ];
-  const maxTotal = 90;
-  const barsEl = document.getElementById('bars');
-  data.forEach(d => {
-    const total = d.agency + d.morsel;
-    const col = document.createElement('div');
-    col.className = 'bar-col';
-    const aH = (d.agency / maxTotal) * 100;
-    const mH = (d.morsel / maxTotal) * 100;
-    const ebPct = (d.ebitda / maxTotal) * 100;
-    col.innerHTML = `
-      <div class="bar-val">R$ ${Math.round(total)}M</div>
-      <div class="bar-stack" style="height:100%;">
-        <div class="bar-ebitda-dot" style="bottom:calc(${ebPct}% - 5px);" title="EBITDA R$ ${d.ebitda}M"></div>
-        <div class="bar-morsel" style="height:0;" data-h="${mH}"></div>
-        <div class="bar-agency" style="height:0;" data-h="${aH}"></div>
+  <!-- SECTION 3: OPERATING FLYWHEEL -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <span class="section-title serif">Operating flywheel</span>
+      <span class="section-rule"></span>
+    </div>
+    <p class="section-intro">A força da Snack Group está no ciclo entre as três unidades — cada uma alimenta a próxima, e os aprendizados voltam pra base.</p>
+    <div class="flywheel">
+      <div class="fw-node">
+        <div class="fw-step">01 · gera</div>
+        <div class="fw-name">Snack Agency</div>
+        <div class="fw-d">Gera caixa, dados, clientes e cases reais operando marcas enterprise no feed.</div>
       </div>
-      <div class="bar-year">${d.year}</div>
-    `;
-    barsEl.appendChild(col);
-  });
-  // animate bars when chart visible
-  const chartIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        barsEl.querySelectorAll('.bar-agency, .bar-morsel').forEach(b => {
-          b.style.height = b.dataset.h + '%';
-        });
-      }
-    });
-  }, { threshold: 0.3 });
-  chartIO.observe(barsEl);
-</script>
+      <div class="fw-node">
+        <div class="fw-step">02 · produtiza</div>
+        <div class="fw-name">Snack Builders</div>
+        <div class="fw-d">Transforma a inteligência operacional em software e plataformas licenciáveis (KOLLECT, TREMOR, SHOPFLOW).</div>
+      </div>
+      <div class="fw-node">
+        <div class="fw-step">03 · constrói</div>
+        <div class="fw-name">Snack SoldOut</div>
+        <div class="fw-d">Usa conteúdo, creators e social commerce para construir marcas D2C — e os cases voltam pra Agency, aumentando autoridade e margem.</div>
+      </div>
+    </div>
+    <div class="fw-summary">
+      <div class="fw-sum-cell"><div class="fs-k">Agency <span>builds attention</span></div><div class="fs-d">Valida o mercado.</div></div>
+      <div class="fw-sum-cell"><div class="fs-k">Builders <span>builds software</span></div><div class="fs-d">Transforma validação em produto.</div></div>
+      <div class="fw-sum-cell"><div class="fs-k">SoldOut <span>builds demand</span></div><div class="fs-d">Transforma cultura em equity.</div></div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: HISTÓRICO AGENCY -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <span class="section-title serif">O histórico da Agency (2020–2025)</span>
+      <span class="section-rule"></span>
+    </div>
+    <p class="section-intro">Seis anos de operação rentável: a base de caixa sobre a qual Builders e SoldOut são construídos — o risco operacional já foi pago.</p>
+    <div class="acum-grid">
+      <div class="acum-cell">
+        <div class="ac-num serif">R$ 178,8M</div>
+        <div class="ac-lbl">Faturamento acumulado</div>
+        <div class="ac-sub">2020–2025</div>
+      </div>
+      <div class="acum-cell">
+        <div class="ac-num serif">12 anos</div>
+        <div class="ac-lbl">Operação enterprise</div>
+        <div class="ac-sub">creator economy</div>
+      </div>
+      <div class="acum-cell featured">
+        <div class="ac-num serif">R$ 32,5M</div>
+        <div class="ac-lbl">EBITDA acumulado</div>
+        <div class="ac-sub">6 anos</div>
+      </div>
+      <div class="acum-cell">
+        <div class="ac-num serif">R$ 80M</div>
+        <div class="ac-lbl">Receita consolidada</div>
+        <div class="ac-sub">projeção 2030E</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: PROJEÇÃO CONSOLIDADA -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <span class="section-title serif">A projeção consolidada (Agency + Builders)</span>
+      <span class="section-rule"></span>
+    </div>
+    <p class="section-intro">A Agency segura o caixa enquanto a Builders vira o motor de crescimento. A SoldOut não entra na consolidação — é equity em marcas D2C, não consolida receita.</p>
+    <div class="traction">
+      <div class="tr-cell"><div class="tr-year">2026</div><div class="tr-rev serif">R$ 27M</div><div class="tr-eb">EBITDA R$ 2M</div></div>
+      <div class="tr-cell"><div class="tr-year">2027</div><div class="tr-rev serif">R$ 35M</div><div class="tr-eb">EBITDA R$ 6M</div></div>
+      <div class="tr-cell"><div class="tr-year">2028</div><div class="tr-rev serif">R$ 47M</div><div class="tr-eb">EBITDA R$ 13M</div></div>
+      <div class="tr-cell"><div class="tr-year">2029</div><div class="tr-rev serif">R$ 62M</div><div class="tr-eb">EBITDA R$ 23M</div></div>
+      <div class="tr-cell peak"><div class="tr-year">2030</div><div class="tr-rev serif">R$ 80M</div><div class="tr-eb">EBITDA R$ 35M</div></div>
+    </div>
+    <div class="hist-acum">
+      <span><strong>Crescimento 2026 → 2030:</strong> receita ~3,0x · EBITDA ~17x · a Builders passa a capturar ARR, licença, IP e margem de produto, mudando o múltiplo do grupo.</span>
+    </div>
+  </div>
+
+  <!-- SECTION 6: SOLDOUT SWEAT EQUITY -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <span class="section-title serif">Snack SoldOut — sweat equity em marcas</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="crave-intro">
+      <div class="ci-title">Como a Snack vira <span>sócia de marcas sem investir capital</span></div>
+      <div class="ci-text">A SoldOut não compra equity com dinheiro — compra com operação. A Snack aloca a mesma máquina de conteúdo, creators, social commerce, dados e ferramentas proprietárias que opera marcas como L'Oréal, Guaraná e P&amp;G em marcas D2C insurgentes, em troca de participação. <strong>O downside é o custo de serviço; o upside é equity de marca de consumo em escala.</strong></div>
+    </div>
+    <div class="crave-flow">
+      <div class="cf-step">
+        <div class="cf-n">01 · A Snack entrega operação</div>
+        <div class="cf-h">Operação completa</div>
+        <div class="cf-d">Conteúdo, creators, afiliados, shop management, dados e social commerce + ferramentas proprietárias (Builders).</div>
+      </div>
+      <div class="cf-step">
+        <div class="cf-n">02 · A Snack recebe equity</div>
+        <div class="cf-h">Participação como sócia</div>
+        <div class="cf-d">Equity de sócia operacional, com vesting e governança definidos, e assento de board.</div>
+      </div>
+      <div class="cf-step">
+        <div class="cf-n">03 · A marca ganha escala</div>
+        <div class="cf-h">Desejo antes da prateleira</div>
+        <div class="cf-d">Audiência, creators, TikTok Shop, conteúdo e demanda social constroem a marca de fora pra dentro.</div>
+      </div>
+    </div>
+    <div class="smush-box">
+      <div>
+        <div class="se-label">Caso âncora · Smush (alimentos funcionais, EUA)</div>
+        <div class="se-row"><span class="se-k">Equity inicial</span><span class="se-v">15% – 20%</span></div>
+        <div class="se-row"><span class="se-k">Equity pós-diluição (exit)</span><span class="se-v">~11%</span></div>
+        <div class="se-row"><span class="se-k">Custo Snack (24m de serviço)</span><span class="se-v">US$ 192k</span></div>
+        <div class="se-row"><span class="se-k">Receita projetada (3 anos)</span><span class="se-v">US$ 11,9M</span></div>
+        <div class="se-row hi"><span class="se-k">Retorno esperado ponderado</span><span class="se-v">US$ 6,1M</span></div>
+      </div>
+      <div>
+        <table class="exit-table">
+          <tr><td class="et-label">Cenário de saída</td><td class="et-label" style="text-align:right;">Retorno · ROI</td></tr>
+          <tr><td class="ex-scn">Acqui-hire ($10M)</td><td><span class="ex-val">US$ 1,1M</span> · <span class="ex-roi">6x</span></td></tr>
+          <tr><td class="ex-scn">Moderada ($30M)</td><td><span class="ex-val">US$ 3,4M</span> · <span class="ex-roi">17x</span></td></tr>
+          <tr><td class="ex-scn">Boa ($80M)</td><td><span class="ex-val">US$ 9,0M</span> · <span class="ex-roi">47x</span></td></tr>
+          <tr><td class="ex-scn">Excelente ($220M)</td><td><span class="ex-val">US$ 24,6M</span> · <span class="ex-roi">128x</span></td></tr>
+          <tr class="expected"><td class="ex-scn">Esperado (ponderado)</td><td><span class="ex-val">US$ 6,1M</span> · <span class="ex-roi">32x</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: FINANCIAL LOGIC + VALUATION -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <span class="section-title serif">Lógica financeira &amp; valuation</span>
+      <span class="section-rule"></span>
+    </div>
+    <p class="section-intro">Cashflow floor + software upside. Cada motor tem modelo, função e múltiplo próprios — sobre a mesma máquina operacional.</p>
+    <div class="logic">
+      <div class="logic-card">
+        <div class="lc-role">Floor</div>
+        <div class="lc-unit">Snack Agency · fee / serviços</div>
+        <div class="lc-row"><b>Função:</b> caixa, margem, relacionamento, dados e cases.<br><b>Múltiplo:</b> serviços, DCF, EBITDA.</div>
+      </div>
+      <div class="logic-card mult">
+        <div class="lc-role">Multiple</div>
+        <div class="lc-unit">Snack Builders · license / software</div>
+        <div class="lc-row"><b>Função:</b> ARR, IP, produto, margem.<br><b>Múltiplo:</b> SaaS vertical / ARR.</div>
+      </div>
+      <div class="logic-card">
+        <div class="lc-role">Upside</div>
+        <div class="lc-unit">Snack SoldOut · equity / ventures</div>
+        <div class="lc-row"><b>Função:</b> upside patrimonial em marcas D2C.<br><b>Múltiplo:</b> venture / consumer brands.</div>
+      </div>
+    </div>
+    <table class="val-table">
+      <thead>
+        <tr><th>Ativo</th><th>Valor</th><th>Base / metodologia · leitura</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="v-asset">Snack Agency</td>
+          <td class="v-amount">R$ 35M</td>
+          <td class="v-basis">DCF / histórico de caixa / operação enterprise. <strong>Piso defensável.</strong></td>
+        </tr>
+        <tr>
+          <td class="v-asset">Snack Builders</td>
+          <td class="v-amount">R$ 40M</td>
+          <td class="v-basis">ARR externo 2028 × múltiplo SaaS vertical conservador. <strong>Upside de tech.</strong></td>
+        </tr>
+        <tr>
+          <td class="v-asset">Snack SoldOut</td>
+          <td class="v-amount">R$ 0</td>
+          <td class="v-basis">Equity venture não precificado. <strong>Opcionalidade gratuita.</strong></td>
+        </tr>
+        <tr class="total">
+          <td class="v-asset">Total pre-money</td>
+          <td class="v-amount">R$ 75M</td>
+          <td class="v-basis">Agency (floor) + Builders (multiple). SoldOut entra como upside grátis.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="val-key">
+      <strong>The investor pays for a proven agency and an early software company — and gets venture optionality for free.</strong> O investidor paga por uma operação comprovada de serviços e uma empresa inicial de software, e leva opcionalidade venture de graça. O valuation não depende de a SoldOut dar certo; se der, aumenta o upside.
+    </div>
+  </div>
+
+  <!-- SECTION 8: USE OF PROCEEDS -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">08</span>
+      <span class="section-title serif">Use of proceeds — R$ 8M</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="uop">
+      <div class="uop-item">
+        <div class="uop-pct serif">75%</div>
+        <div class="uop-amt">R$ 6,0M</div>
+        <div class="uop-title">MBO — saída da Biosphera</div>
+        <div class="uop-desc">Retomar controle, limpar cap table e eliminar fricções estratégicas.</div>
+      </div>
+      <div class="uop-item b">
+        <div class="uop-pct serif">15%</div>
+        <div class="uop-amt">R$ 1,2M</div>
+        <div class="uop-title">GTM Snack Builders</div>
+        <div class="uop-desc">Time comercial dedicado, primeiros contratos externos e validação de pricing.</div>
+      </div>
+      <div class="uop-item c">
+        <div class="uop-pct serif">10%</div>
+        <div class="uop-amt">R$ 0,8M</div>
+        <div class="uop-title">Capital de giro + Snack SoldOut</div>
+        <div class="uop-desc">Runway operacional e estruturação dos primeiros deals D2C.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9: THE ASK -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">09</span>
+      <span class="section-title serif">The ask — simples de comprar</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="offer-grid">
+          <div class="offer-cell"><div class="o-lbl">Captação</div><div class="o-val serif">R$ 8M</div></div>
+          <div class="offer-cell"><div class="o-lbl">Pre-money</div><div class="o-val serif">R$ 75M</div></div>
+          <div class="offer-cell accent"><div class="o-lbl">Diluição</div><div class="o-val serif">9,6%</div></div>
+        </div>
+        <ul class="struct-list" style="margin-top:18px;">
+          <li><span class="s-key">Estrutura</span><span class="s-val">Equity primário na Snack Group (uma empresa)</span></li>
+          <li><span class="s-key">Uso</span><span class="s-val">MBO (saída Biosphera) + GTM Builders + giro / SoldOut</span></li>
+          <li><span class="s-key">Simplicidade</span><span class="s-val">Um cheque, um cap table, uma due diligence</span></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="struct-list">
+          <li><span class="s-key">Objetivo</span><span class="s-val">Acelerar a transição de agência premium para companhia de creator economy</span></li>
+          <li><span class="s-key">Três unidades</span><span class="s-val">Agency · Builders · SoldOut (dentro da empresa)</span></li>
+          <li><span class="s-key">Proposição</span><span class="s-val">Uma operação consolidada · três motores de valor</span></li>
+          <li><span class="s-key">Tese</span><span class="s-val">One company. One cap table. Three value engines.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 10: WHY NOW -->
+  <div class="section">
+    <div class="section-head">
+      <span class="section-num">10</span>
+      <span class="section-title serif">Why now</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="whynow">
+      <div class="wn-points">
+        <div class="wn-pt">O mercado migra de mídia comprada para atenção construída — marcas precisam operar no feed todos os dias.</div>
+        <div class="wn-pt">Creators viraram canais de distribuição; comunidades viraram ativos de crescimento.</div>
+        <div class="wn-pt">Social commerce encurtou a distância entre conteúdo, influência e compra.</div>
+        <div class="wn-pt">A Snack já opera essa cadeia para marcas enterprise — agora captura valor em três frentes.</div>
+      </div>
+      <div class="wn-chain">Attention <span>→</span> Software <span>→</span> Demand</div>
+    </div>
+  </div>
+
+  <!-- FINAL NARRATIVE -->
+  <div class="section">
+    <div class="final-narr">
+      <div class="fn-prop">Snack Group is a <span>feed-first creator economy company.</span></div>
+      <div class="fn-text">Ao longo de 12 anos, a Snack construiu uma operação enterprise de conteúdo, creators, influência e social commerce. Agora essa inteligência operacional é monetizada em três motores de valor — <strong>serviço, software e equity</strong> — sobre a mesma base de clientes tier 1.</div>
+      <div class="fn-engines">
+        <div class="fn-eng"><div class="fe-n">Snack Agency</div><div class="fe-r">the cashflow engine</div><div class="fe-d">Gera caixa, relacionamento, dados e cases reais.</div></div>
+        <div class="fn-eng"><div class="fe-n">Snack Builders</div><div class="fe-r">the software engine</div><div class="fe-d">Plataformas proprietárias: KOLLECT, TREMOR, SHOPFLOW.</div></div>
+        <div class="fn-eng"><div class="fe-n">Snack SoldOut</div><div class="fe-r">the D2C venture engine</div><div class="fe-d">Marcas social-first com upside patrimonial.</div></div>
+      </div>
+      <div class="fn-close">The Agency creates the floor. Builders creates the multiple. <span>SoldOut creates the upside.</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <span>Snack Group · Confidencial · Captação 2026</span>
+    <span class="contact">Nelson Botega · nelson@redesnack.com.br</span>
+  </div>
+  <p class="disclaimer">Documento confidencial preparado exclusivamente para fins de discussão preliminar. As projeções aqui contidas são estimativas baseadas em premissas internas e não constituem garantia de resultados futuros. Os múltiplos e valuations apresentados refletem cenários de referência e devem ser validados em due diligence. Não constitui oferta de valores mobiliários.</p>
+
+</div>
 </body>
 </html>
